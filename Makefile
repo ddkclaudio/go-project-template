@@ -2,7 +2,7 @@ BINARY_NAME := main
 BUILD_DIR := build
 MAIN_FILE := main.go
 
-.PHONY: all build run clean clean-force
+.PHONY: all build run clean clean-force test
 
 all: build
 
@@ -22,3 +22,6 @@ clean-force:
 	@git clean -fdX
 	@find . -type d -empty -delete
 	@echo "Force clean completed (removed temporary files and empty directories)"
+
+test:
+	@go test ./test/...
